@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src * data: https:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.instagram.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src https://www.google.com https://www.instagram.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; media-src 'self' https:;"/>
+<meta name="description" content="Bull Gym Kuala Lumpur - Affordable fitness for everyone. Join today from RM50/month. Strength training, weight loss, personal coaching. Beginner-friendly gym."/>
+<meta name="keywords" content="Bull Gym, Kuala Lumpur gym, affordable gym Malaysia, fitness center KL, personal training, weight loss"/>
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Bull Gym Kuala Lumpur - Affordable Fitness from RM50/month"/>
+<meta property="og:description" content="Your fitness journey starts here. Strength training, weight loss, personal coaching. Beginner-friendly gym in Kuala Lumpur."/>
+<meta property="og:image" content="logo.jpeg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://bullgym.com"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Bull Gym Kuala Lumpur - Affordable Fitness"/>
+<meta name="twitter:description" content="Join from RM50/month. Strength training, weight loss, personal coaching."/>
+<meta name="twitter:image" content="logo.jpeg"/>
+
+<title>Bull Gym - Kuala Lumpur | Your Fitness Journey Starts Here</title>
+<link rel="canonical" href="https://bullgym.com/"/>
+<link rel="icon" type="image/jpeg" href="logo.jpeg"/>
+<link rel="icon" type="image/png" href="logo.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthClub",
+  "name": "Bull Gym",
+  "image": "logo.jpeg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "23-2, Jalan 1/23f, Taman Teratai Mewah",
+    "addressLocality": "Kuala Lumpur",
+    "postalCode": "53000",
+    "addressCountry": "MY"
+  },
+  "telephone": "+60127989032",
+  "url": "https://bullgym.com",
+  "priceRange": "RM50-RM70",
+  "openingHours": "Mo-Su",
+  "sameAs": [
+    "https://www.instagram.com/bullgym19/",
+    "https://www.tiktok.com/@bull.gym19"
+  ]
+}
+</script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary-container": "#ff535b",
+        "on-primary-container": "#5b000e",
+        "background": "#131313",
+        "surface-container-high": "#2a2a2a",
+        "on-surface": "#e5e2e1",
+        "outline": "#ab8987",
+        "primary": "#ffb3b1",
+        "surface-container-highest": "#353534",
+        "secondary": "#c8c6c5",
+        "surface-container": "#201f1f",
+        "surface": "#131313",
+        "on-surface-variant": "#e4bebc",
+        "tertiary-container": "#2fa096",
+        "on-tertiary-container": "#00302c",
+        "surface-container-low": "#1c1b1b",
+        "outline-variant": "#5b403f",
+        "on-primary": "#680011"
+      }
+    }
+  }
+}
+</script>
+<style>
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.brutalist-shadow {
+    box-shadow: 4px 4px 0px 0px rgba(230,57,70,1);
+}
+.noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+}
+.intensity-meter {
+    background: linear-gradient(90deg, #474746 0%, #ff535b 100%);
+}
+html {
+    scroll-behavior: smooth;
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+nav.scrolled {
+    background: rgba(10, 10, 10, 0.95) !important;
+    box-shadow: 0 4px 20px rgba(230, 57, 70, 0.2);
+}
+
+/* Mobile menu */
+#mobileMenu {
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+}
+#mobileMenu.open {
+    max-height: 300px;
+}
+
+/* Reduce animations on mobile for better performance */
+@media (max-width: 768px) {
+    .fade-in, .slide-in-left, .slide-in-right, .scale-in {
+        transition: opacity 0.3s ease-out;
+        transform: none !important;
+    }
+    .hover-lift:hover {
+        transform: translateY(-4px);
+    }
+    #heroImg {
+        transform: none !important;
+    }
+}
+
+/* Consistent button states - Aggressive Dark Theme */
+.btn-primary {
+    background: #7f1d1d;
+    color: white;
+    border: 2px solid #991b1b;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(127, 29, 29, 0.4);
+}
+.btn-primary:hover {
+    background: #0a0a0a;
+    color: white;
+    border: 2px solid #dc2626;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(220, 38, 38, 0.6);
+}
+.btn-primary:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.btn-secondary {
+    background: #111111;
+    color: white;
+    border: 2px solid #7f1d1d;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(127, 29, 29, 0.3);
+}
+.btn-secondary:hover {
+    background: #7f1d1d;
+    color: white;
+    border: 2px solid #dc2626;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(220, 38, 38, 0.6);
+}
+.btn-secondary:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Consistent link states */
+a {
+    transition: all 0.3s ease;
+}
+a:active {
+    opacity: 0.7;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    animation: pulse-whatsapp 2s infinite;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+}
+.whatsapp-float:active {
+    transform: scale(0.95);
+}
+
+@keyframes pulse-whatsapp {
+    0%, 100% {
+        box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1);
+    }
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 100px;
+        right: 20px;
+        width: 56px;
+        height: 56px;
+        font-size: 28px;
+    }
+}
+
+/* Card hover consistency */
+.card-hover {
+    transition: all 0.3s ease;
+}
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation active indicator */
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: #b91c1c;
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+.nav-link.active {
+    color: #b91c1c !important;
+}
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Pricing catalog specific styles - Aggressive Dark Theme */
+.pricing-card {
+    transition: all 0.4s ease;
+}
+.pricing-card:hover {
+    background: linear-gradient(135deg, #0d0d0d 0%, #1a0000 100%) !important;
+    border-color: #dc2626 !important;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(220, 38, 38, 0.5);
+}
+.pricing-card:hover h3,
+.pricing-card:hover p,
+.pricing-card:hover span,
+.pricing-card:hover li {
+    color: #fef2f2 !important;
+}
+.pricing-card:hover .material-symbols-outlined {
+    color: #dc2626 !important;
+}
+
+/* Modern button color scheme - Aggressive Blood Red to Black */
+.pricing-btn {
+    background: #7f1d1d;
+    color: white;
+    font-weight: 900;
+    border: 2px solid #991b1b;
+    transition: all 0.3s ease;
+}
+.pricing-btn:hover {
+    background: #0a0a0a;
+    color: white;
+    border: 2px solid #dc2626;
+    box-shadow: 0 6px 12px rgba(220, 38, 38, 0.5);
+    transform: translateY(-2px);
+}
+.pricing-btn:active {
+    transform: scale(0.98);
+}
+
+/* Sticky CTA button */
+.sticky-cta-desktop {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 50px;
+    border: 2px solid #dc2626;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 20px rgba(127, 29, 29, 0.6);
+    transition: all 0.3s ease;
+    z-index: 40;
+}
+.sticky-cta-desktop:hover {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    transform: translateX(-50%) translateY(-4px);
+    box-shadow: 0 12px 30px rgba(220, 38, 38, 0.8);
+}
+@media (max-width: 768px) {
+    .sticky-cta-desktop {
+        display: none;
+    }
+}
+</style>
+</head>
+<body class="bg-background text-on-surface font-['Epilogue'] selection:bg-primary-container selection:text-on-primary-container">
+<div class="fixed inset-0 noise-overlay z-[100]"></div>
+
+<nav id="navbar" class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-md border-b border-white/10 shadow-[4px_4px_0px_0px_rgba(230,57,70,1)] transition-all duration-300">
+<div class="px-6 py-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<img alt="BULL GYM LOGO" class="h-8 md:h-10 object-contain" src="logo.jpeg" loading="lazy"/>
+<span class="text-xl md:text-2xl font-black italic tracking-tighter text-red-600">BULL GYM</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+    <a class="nav-link font-black tracking-tighter uppercase text-white active" href="#" data-section="home">HOME</a>
+    <a class="nav-link font-black tracking-tighter uppercase text-white" href="#programs" data-section="programs">PROGRAMS</a>
+    <a class="nav-link font-black tracking-tighter uppercase text-white" href="#membership" data-section="membership">MEMBERSHIP</a>
+    <a class="nav-link font-black tracking-tighter uppercase text-white" href="#contact" data-section="contact">CONTACT</a>
+</div>
+<div class="flex items-center gap-4">
+<a href="#membership" class="btn-primary hidden md:inline-block font-bold py-2 px-6 uppercase tracking-tighter rounded-xl text-sm md:text-base">TRAIN NOW</a>
+<button id="menuToggle" class="md:hidden text-white text-3xl" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="md:hidden max-h-0 overflow-hidden">
+    <div class="flex flex-col gap-4 py-4 border-t border-white/10 mt-4">
+        <a class="nav-link font-bold uppercase text-white active py-2" href="#" data-section="home" onclick="toggleMobileMenu()">HOME</a>
+        <a class="nav-link font-bold uppercase text-white py-2" href="#programs" data-section="programs" onclick="toggleMobileMenu()">PROGRAMS</a>
+        <a class="nav-link font-bold uppercase text-white py-2" href="#membership" data-section="membership" onclick="toggleMobileMenu()">MEMBERSHIP</a>
+        <a class="nav-link font-bold uppercase text-white py-2" href="#contact" data-section="contact" onclick="toggleMobileMenu()">CONTACT</a>
+        <a href="#membership" class="btn-primary font-bold py-3 px-6 text-center rounded-xl uppercase" onclick="toggleMobileMenu()">TRAIN NOW</a>
+    </div>
+</div>
+</div>
+</nav>
+
+<header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10"></div>
+<img id="heroImg" class="w-full h-full object-cover grayscale opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-BUZXelmjSxae4qRYueEQgkAeXqtSNzcZ1q7TCGcgydjRLVs77E5hkJUPHooZcK_hbfVNWZdc7WmKL5fQlFDVYGfvxKzgjpXw2-I6p_uNITehbQ1IGsKRmqefbbXkUNDdXmLCIfSSYDvrKy2a3o5FvLp0eLLrN4P0q7kf6PhTqIZHRFwtRWnd1cocY2WlUBSmw7HzY72F44af13wiSWKhO1JqRly97soqUbsiweA2Mmm2FqNTBLaZ5MVPpN5olKXVVe-NIfRSASs" loading="lazy" alt="Bull Gym interior"/>
+</div>
+<div class="container mx-auto px-6 relative z-20">
+<div class="max-w-4xl">
+<p class="text-primary-container tracking-[0.3em] font-bold mb-4 uppercase fade-in">KUALA LUMPUR — MALAYSIA</p>
+<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black leading-tight tracking-tight mb-6 fade-in stagger-1">NO EXCUSES. JUST IRON.</h1>
+<p class="text-lg md:text-xl text-gray-300 max-w-xl mb-8 fade-in stagger-2">Train hard. Get stronger. No hand-holding. Just results.</p>
+<div class="flex flex-col md:flex-row gap-4 fade-in stagger-3">
+    <a class="btn-primary px-8 py-4 font-bold text-lg text-center rounded-xl" href="#membership">START TRAINING</a>
+<a class="btn-secondary px-8 py-4 font-bold text-lg text-center rounded-xl" href="#programs">View Programs</a>
+</div>
+<div class="flex flex-wrap gap-4 mt-10 fade-in stagger-4">
+<span class="bg-surface-container px-4 py-2 text-sm font-semibold rounded-xl">Fat Loss Program</span>
+<span class="bg-surface-container px-4 py-2 text-sm font-semibold rounded-xl">Strength Training</span>
+<span class="bg-surface-container px-4 py-2 text-sm font-semibold rounded-xl">Personal Coaching</span>
+</div>
+</div>
+</div>
+<div class="absolute bottom-10 right-10 hidden md:block">
+<span class="material-symbols-outlined text-6xl text-outline-variant animate-bounce">south</span>
+</div>
+</header>
+
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-4xl mx-auto text-center px-6">
+<h2 class="text-4xl md:text-5xl font-bold mb-6 fade-in">More Than Just a Gym</h2>
+<p class="text-gray-400 mb-6 fade-in stagger-1">At Bull Gym, we believe fitness is not just about looking good — it's about feeling confident, strong, and healthy every day.</p>
+<p class="text-gray-400 fade-in stagger-2">We created this gym to help everyday people transform their lives through fitness. Whether you're a beginner or experienced, you'll feel welcome here.</p>
+</div>
+</section>
+
+<section class="py-20 bg-surface-container-low text-center" id="promo">
+<h2 class="text-4xl md:text-5xl font-bold mb-6 fade-in">NO FLUFF. NO GIMMICKS. JUST RESULTS.</h2>
+<p class="max-w-2xl mx-auto text-gray-400 mb-10 fade-in stagger-1">Real equipment. Real coaching. Real results. Starting from RM50.</p>
+<a href="#membership" class="btn-primary inline-block px-8 py-4 font-bold rounded-xl fade-in stagger-2">View Membership Plans</a>
+</section>
+
+<section class="py-32" id="programs">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div class="slide-in-left">
+<span class="text-primary font-black tracking-widest uppercase">OUR PROGRAMS</span>
+<h2 class="text-5xl md:text-7xl font-black uppercase italic">CHOOSE YOUR PATH</h2>
+</div>
+<p class="max-w-md text-on-surface-variant text-right slide-in-right">Beginner or experienced, we have programs designed to help you reach your fitness goals.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group relative bg-surface-container-high min-h-[400px] md:h-[500px] overflow-hidden rounded-xl hover-lift scale-in stagger-1">
+<img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_x8gO8iPXpEALVAQY7nLypH2M17nlJd9CBs88RN78jYrhOcuSGLQ7Akbay6o2E8hrz7z0dfBc_-0tu-t3Pb7TWVtdsEjYModFZ37cn7SL6MgzBZRPOBzPwgBy4oou4xekLSxSgrSSgpj0jMulKvvJ-kpPEmZLTbocz8cTFULwBo316nwJYdfmwkIsX9Km_L93en6MYIWR0BTEE-PEx9ktCmBgWh3Tv5Or3yZnAIIfvO3Gl5IVbU7gf0FrNiBGbJsbe2GzA_9vVDg" loading="lazy" alt="Strength training at Bull Gym"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+<div class="absolute bottom-0 p-8 w-full">
+<h3 class="text-3xl font-black uppercase italic mb-2">STRENGTH TRAINING</h3>
+<p class="text-on-surface-variant mb-6">Build muscle, increase strength, and improve your overall fitness.</p>
+<div class="intensity-meter h-2 w-full mb-4 rounded-full"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-black tracking-widest text-primary uppercase">INTENSITY: HIGH</span>
+<span class="material-symbols-outlined text-primary">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="group relative bg-surface-container-high min-h-[400px] md:h-[500px] overflow-hidden rounded-xl hover-lift scale-in stagger-2">
+<img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu3pfBYkbC720iTgv4g-6SKhO7aRrd1_sy6C2uq1jj5lOJRzvYLB1TfH--Z95IxkXcAGJlfM7OSOt9MjDqjixOMoBuUI75XvF0lqKsljOXzN_mg1XcFqgHN_GaRgMWDpHnfz0PMhuy9rVvLTRoxlALRjsRJxOZDkBLzHTOsgKox6jEb6kFiGjsRFPiXAe1JfDSK-3-MZQvjK9usJpbbm50kqvT2yZnp_gN8cw24HBHZPokiwyp2_1TNoaceq41u6Q6qAmCUXr2sek" loading="lazy" alt="Weight loss program at Bull Gym"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+<div class="absolute bottom-0 p-8 w-full">
+<h3 class="text-3xl font-black uppercase italic mb-2">WEIGHT LOSS</h3>
+<p class="text-on-surface-variant mb-6">Lose fat effectively with guided workouts and simple nutrition advice.</p>
+<div class="intensity-meter h-2 w-full mb-4 rounded-full"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-black tracking-widest text-primary uppercase">INTENSITY: EXTREME</span>
+<span class="material-symbols-outlined text-primary">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="group relative bg-surface-container-high min-h-[400px] md:h-[500px] overflow-hidden rounded-xl hover-lift scale-in stagger-3">
+<img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrSWR6wYJHuVoQT4mkmhjJXeJjiSChGFv7nkuAFnvTQTLxz_hrz2Qetn-VAuG_U9PA0BgAYkchwAkCV-RyUOkyrbOQZY8lM1kJHamwAZCcYUnHl2s-lW0rvdAC1ge8sXSyesgnBWVrmAKi3Gygtxd7c_8gSEdIZ9wmLnu8wCze8RpxOY-yVqEISbiWpauBHMt21cXYDKeLXg4KGAadzUvYGBmQ9UWR0d2DCOJU18WuW60WGX9_s6QmZDKshMCJG1TCM_7s14pdLuA" loading="lazy" alt="Personal training at Bull Gym"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+<div class="absolute bottom-0 p-8 w-full">
+<h3 class="text-3xl font-black uppercase italic mb-2">PERSONAL TRAINING</h3>
+<p class="text-on-surface-variant mb-6">One-on-one coaching tailored to your fitness goals and level.</p>
+<div class="intensity-meter h-2 w-full mb-4 rounded-full"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-black tracking-widest text-primary uppercase">INTENSITY: CUSTOM</span>
+<span class="material-symbols-outlined text-primary">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Video Section - Gym Tour -->
+<section class="py-24 text-center bg-black">
+    <h2 class="text-4xl md:text-5xl font-bold mb-8 fade-in">See The Gym In Action</h2>
+    <p class="text-gray-400 mb-10 fade-in stagger-1">Real people. Real workouts. Real results.</p>
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="bg-surface-container-high rounded-xl overflow-hidden shadow-lg scale-in stagger-2">
+            <video id="gymVideo" class="w-full h-auto" controls muted loop playsinline preload="none" poster="logo.jpeg" onerror="this.style.display='none'; document.getElementById('videoFallback').style.display='flex';">
+                <source src="gym.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div id="videoFallback" style="display: none;" class="flex items-center justify-center bg-surface-container-high text-center p-16 min-h-[400px]">
+                <div>
+                    <span class="material-symbols-outlined text-6xl text-primary mb-4 block">videocam_off</span>
+                    <p class="text-2xl font-bold text-on-surface mb-2">Gym Tour Video Coming Soon</p>
+                    <p class="text-gray-400">We're preparing an amazing video tour of our facilities!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-32 bg-surface" id="membership">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12 fade-in">
+<h2 class="text-6xl md:text-8xl font-black uppercase italic text-outline-variant/20 mb-[-1.5rem]">PRICING</h2>
+<h2 class="text-4xl md:text-6xl font-black uppercase italic relative z-10">MEMBERSHIP PLANS</h2>
+</div>
+
+<!-- Registration Fee Callout -->
+<div class="max-w-2xl mx-auto mb-12 bg-primary-container/10 border-2 border-primary rounded-xl p-6 text-center fade-in">
+<p class="text-sm text-primary uppercase tracking-widest mb-2">One-Time Fee</p>
+<p class="text-3xl font-black">REGISTRATION: <span class="text-primary">RM30</span></p>
+<p class="text-xs text-gray-400 mt-2">(First-time sign-up only)</p>
+</div>
+
+<!-- Monthly & Package Pricing -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+<div class="pricing-card bg-surface-container-low p-6 border-t-4 border-transparent rounded-xl scale-in stagger-1">
+    <p class="text-on-surface-variant tracking-widest mb-3 text-xs">GENERAL</p>
+    <h3 class="text-3xl font-black uppercase italic mb-6">MEN</h3>
+    <div class="space-y-4 mb-8">
+        <div>
+            <p class="text-xs text-gray-400 mb-1">1 MONTH</p>
+            <div class="flex items-baseline gap-2">
+                <span class="text-sm font-bold">RM</span>
+                <span class="text-5xl font-black">70</span>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-4">
+            <p class="text-xs text-gray-400 mb-1">3 MONTHS</p>
+            <div class="flex items-baseline gap-2">
+                <span class="text-sm font-bold">RM</span>
+                <span class="text-4xl font-black">200</span>
+            </div>
+        </div>
+    </div>
+    <ul class="space-y-3 mb-8 text-xs uppercase font-bold">
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Full Access</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Locker Access</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> No Contract</li>
+    </ul>
+    <a href="#contact" class="pricing-btn block w-full py-3 border-2 border-gray-400 font-black rounded-xl text-center text-sm">JOIN NOW</a>
+</div>
+
+<div class="pricing-card bg-surface-container-low p-6 border-t-4 border-primary brutalist-shadow relative rounded-xl scale-in stagger-2">
+    <div class="absolute top-0 right-0 bg-primary text-white px-3 py-1 text-xs font-bold rounded-bl-xl">MOST POPULAR</div>
+    <p class="text-primary tracking-widest mb-3 text-xs">EXCLUSIVE</p>
+    <h3 class="text-3xl font-black uppercase italic mb-6">WOMEN</h3>
+    <div class="space-y-4 mb-8">
+        <div>
+            <p class="text-xs text-gray-400 mb-1">1 MONTH</p>
+            <div class="flex items-baseline gap-2">
+                <span class="text-sm font-bold">RM</span>
+                <span class="text-5xl font-black">60</span>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-4">
+            <p class="text-xs text-gray-400 mb-1">3 MONTHS</p>
+            <div class="flex items-baseline gap-2">
+                <span class="text-sm font-bold">RM</span>
+                <span class="text-4xl font-black">170</span>
+            </div>
+        </div>
+    </div>
+    <ul class="space-y-3 mb-8 text-xs uppercase font-bold">
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Ladies Section</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Full Access</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Locker Access</li>
+    </ul>
+    <a href="#contact" class="pricing-btn block w-full py-3 border-2 border-gray-400 font-black rounded-xl text-center text-sm">JOIN NOW</a>
+</div>
+
+<div class="pricing-card bg-surface-container-low p-6 border-t-4 border-transparent rounded-xl scale-in stagger-3">
+    <p class="text-on-surface-variant tracking-widest mb-3 text-xs">YOUTH</p>
+    <h3 class="text-3xl font-black uppercase italic mb-6">STUDENTS</h3>
+    <div class="space-y-4 mb-8">
+        <div>
+            <p class="text-xs text-gray-400 mb-1">1 MONTH</p>
+            <div class="flex items-baseline gap-2">
+                <span class="text-sm font-bold">RM</span>
+                <span class="text-5xl font-black">55</span>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-4">
+            <p class="text-xs text-gray-400 mb-1">3 MONTHS</p>
+            <div class="flex items-baseline gap-2">
+                <span class="text-sm font-bold">RM</span>
+                <span class="text-4xl font-black">160</span>
+            </div>
+        </div>
+    </div>
+    <ul class="space-y-3 mb-8 text-xs uppercase font-bold">
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Valid ID Required</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Full Access</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Locker Access</li>
+    </ul>
+    <a href="#contact" class="pricing-btn block w-full py-3 border-2 border-gray-400 font-black rounded-xl text-center text-sm">JOIN NOW</a>
+</div>
+
+<div class="pricing-card bg-surface-container-low p-6 border-t-4 border-transparent rounded-xl scale-in stagger-4">
+    <p class="text-on-surface-variant tracking-widest mb-3 text-xs">WISDOM</p>
+    <h3 class="text-3xl font-black uppercase italic mb-6">SENIORS</h3>
+    <div class="space-y-4 mb-8">
+        <div>
+            <p class="text-xs text-gray-400 mb-1">1 MONTH</p>
+            <div class="flex items-baseline gap-2">
+                <span class="text-sm font-bold">RM</span>
+                <span class="text-5xl font-black">50</span>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-4">
+            <p class="text-xs text-gray-400 mb-1">3 MONTHS</p>
+            <div class="flex items-baseline gap-2">
+                <span class="text-sm font-bold">RM</span>
+                <span class="text-4xl font-black">140</span>
+            </div>
+        </div>
+    </div>
+    <ul class="space-y-3 mb-8 text-xs uppercase font-bold">
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Age 55+</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Full Access</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Coaching Aid</li>
+    </ul>
+    <a href="#contact" class="pricing-btn block w-full py-3 border-2 border-gray-400 font-black rounded-xl text-center text-sm">JOIN NOW</a>
+</div>
+</div>
+
+<!-- Daily Walk-In Rates -->
+<div class="max-w-3xl mx-auto mb-12 fade-in">
+<h3 class="text-3xl font-black uppercase italic text-center mb-8">DAILY WALK-IN RATES</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="card-hover bg-surface-container-low p-6 rounded-xl text-center">
+<p class="text-xs text-gray-400 mb-2">MEN</p>
+<p class="text-4xl font-black text-primary">RM7</p>
+</div>
+<div class="card-hover bg-surface-container-low p-6 rounded-xl text-center">
+<p class="text-xs text-gray-400 mb-2">WOMEN</p>
+<p class="text-4xl font-black text-primary">RM6</p>
+</div>
+<div class="card-hover bg-surface-container-low p-6 rounded-xl text-center">
+<p class="text-xs text-gray-400 mb-2">STUDENTS</p>
+<p class="text-4xl font-black text-primary">RM6</p>
+</div>
+<div class="card-hover bg-surface-container-low p-6 rounded-xl text-center">
+<p class="text-xs text-gray-400 mb-2">SENIORS</p>
+<p class="text-4xl font-black text-primary">RM5</p>
+</div>
+</div>
+</div>
+
+<!-- Promo Callout -->
+<div class="max-w-2xl mx-auto text-center bg-gradient-to-r from-primary-container/20 to-tertiary-container/20 border-2 border-primary/30 rounded-xl p-8 fade-in">
+<span class="material-symbols-outlined text-5xl text-primary mb-4">campaign</span>
+<h3 class="text-2xl font-black uppercase mb-4">LOOKING FOR SPECIAL PROMOS?</h3>
+<p class="text-gray-300 mb-6">Check out our latest promotions and limited-time offers!</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a href="https://www.instagram.com/bullgym19/" target="_blank" rel="noopener noreferrer" class="btn-primary font-bold py-3 px-6 rounded-xl inline-flex items-center justify-center gap-2">
+    <span class="material-symbols-outlined">photo_camera</span>
+    VIEW INSTAGRAM
+</a>
+<a href="https://wa.me/60127989035" target="_blank" rel="noopener noreferrer" class="btn-primary font-bold py-3 px-6 rounded-xl inline-flex items-center justify-center gap-2">
+    <span class="material-symbols-outlined">chat</span>
+    WHATSAPP US
+</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="py-32" id="contact">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div class="slide-in-left">
+<h2 class="text-6xl font-black uppercase italic mb-12">FIND <span class="text-primary-container">US</span></h2>
+<div class="space-y-8 mb-12">
+<div>
+<p class="text-primary tracking-widest mb-2 text-xs">LOCATION</p>
+<p class="text-2xl font-bold uppercase">23-2, Jalan 1/23f,<br/>Taman Teratai Mewah,<br/>53000 Kuala Lumpur</p>
+</div>
+<div class="grid grid-cols-1 gap-6">
+<div>
+<p class="text-sm text-gray-400">PHONE</p>
+<p class="text-xl font-bold">012-798 9032</p>
+</div>
+<div>
+<p class="text-sm text-gray-400 mb-2">WHATSAPP CONTACTS</p>
+<div class="space-y-2">
+<p class="text-lg font-bold">012-798 9035</p>
+<p class="text-lg font-bold">012-798 9735</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<a href="https://wa.me/60127989035" target="_blank" rel="noopener noreferrer" class="btn-primary font-bold py-4 flex items-center justify-center gap-2 rounded-xl">
+    <span class="material-symbols-outlined">chat</span> WHATSAPP: 012-798 9035
+</a>
+<a href="https://wa.me/60127989735" target="_blank" rel="noopener noreferrer" class="btn-primary font-bold py-4 flex items-center justify-center gap-2 rounded-xl">
+    <span class="material-symbols-outlined">chat</span> WHATSAPP: 012-798 9735
+</a>
+<a href="tel:+60127989032" class="btn-primary font-bold py-4 flex items-center justify-center gap-2 rounded-xl">
+    <span class="material-symbols-outlined">call</span> CALL NOW
+</a>
+</div>
+</div>
+<a href="https://www.google.com/maps/dir//Bull+Gym,+23-2,+Jalan+1%2F23f,+Taman+Teratai+Mewah,+53000+Kuala+Lumpur" target="_blank" rel="noopener noreferrer" class="block min-h-[350px] md:h-[500px] bg-surface-container-high border-8 border-white/5 rounded-xl relative group hover:border-primary transition-all duration-500 overflow-hidden slide-in-right hover-lift">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.651479829886!2d101.7090763!3d3.2000676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc39df566633b1%3A0x4a93e3becd02333e!2sBull%20Gym!5e0!3m2!1sen!2smy" width="100%" height="100%" style="border:0;filter:grayscale(100%);" allowfullscreen loading="lazy" class="group-hover:grayscale-0 transition-all duration-500"></iframe>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bg-primary-container p-4 animate-pulse rounded-full">
+<span class="material-symbols-outlined text-4xl text-on-primary-container" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</section>
+
+<!-- Developer Credit Section -->
+<section class="py-16 bg-surface-container-low border-t border-primary/20">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+        <div class="bg-surface-container rounded-xl p-8 border border-white/10 fade-in">
+            <p class="text-sm text-gray-300 mb-3 uppercase tracking-wider">Built With Passion By</p>
+            <p class="text-2xl font-black text-primary mb-4">Mahindra Prasad</p>
+            <p class="text-base text-gray-200 leading-relaxed mb-3">
+                Bull Gym member and freelance web developer,
+                combining strength and creativity to craft powerful digital experiences.
+            </p>
+            <p class="text-sm text-gray-300 mb-6">
+                Proud to support a community that pushes limits and builds champions.
+            </p>
+            <p class="text-sm text-primary/80 font-semibold mb-6">
+                Let's build something strong together.
+            </p>
+
+            <!-- Social Links -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://github.com/mahindra27" target="_blank" rel="noopener noreferrer" class="btn-secondary w-full sm:w-auto px-6 py-3 font-bold rounded-xl inline-flex items-center justify-center gap-2 hover:scale-105 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    <span>GITHUB</span>
+                </a>
+                <a href="https://www.linkedin.com/in/mahindra-prasad-4b32b02ba" target="_blank" rel="noopener noreferrer" class="btn-secondary w-full sm:w-auto px-6 py-3 font-bold rounded-xl inline-flex items-center justify-center gap-2 hover:scale-105 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    <span>LINKEDIN</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-neutral-950 w-full border-t-4 border-red-600">
+<div class="flex flex-col md:flex-row justify-between items-center py-6 px-6 md:px-8 gap-4">
+<div class="flex items-center gap-3">
+<img alt="BULL GYM LOGO" class="h-6" src="logo.jpeg"/>
+<span class="text-lg font-black text-white">BULL GYM</span>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-bold uppercase tracking-widest text-[10px] text-neutral-500 hover:text-white transition-colors" href="https://www.instagram.com/bullgym19/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+<a class="font-bold uppercase tracking-widest text-[10px] text-neutral-500 hover:text-white transition-colors" href="https://www.tiktok.com/@bull.gym19?_r=1&_t=ZS-95boRZsoFAy" target="_blank" rel="noopener noreferrer">TIKTOK</a>
+</div>
+    <p class="font-bold uppercase tracking-widest text-[9px] text-neutral-500"><span id="copyrightYear"></span> BULL GYM KL</p>
+</div>
+</footer>
+
+<div class="fixed bottom-8 right-8 z-50 md:hidden">
+<a href="#membership" class="btn-primary w-16 h-16 flex items-center justify-center rounded-full shadow-lg">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">add</span>
+</a>
+</div>
+
+<script>
+// Dynamic copyright year
+document.getElementById('copyrightYear').textContent = '© ' + new Date().getFullYear();
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach((el) => {
+    observer.observe(el);
+});
+
+// Cache DOM elements
+let heroImg = document.getElementById('heroImg');
+let navbar = document.getElementById('navbar');
+const sections = document.querySelectorAll('section, header');
+const navLinks = document.querySelectorAll('.nav-link');
+
+// COMBINED SCROLL LISTENER - Performance optimized
+window.addEventListener('scroll', () => {
+    let scrolled = window.pageYOffset;
+
+    // Parallax effect
+    if (scrolled < window.innerHeight) {
+        heroImg.style.transform = 'translateY(' + (scrolled * 0.5) + 'px)';
+    }
+
+    // Navbar background
+    if (scrolled > 100) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+
+    // Active navigation tracking
+    let current = 'home';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrolled >= (sectionTop - 200)) {
+            current = section.getAttribute('id') || 'home';
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-section') === current) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Initial hero animation
+window.addEventListener('load', () => {
+    document.querySelectorAll('header .fade-in').forEach(el => {
+        el.classList.add('visible');
+    });
+});
+
+// Mobile menu toggle
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+}
+</script>
+
+<!-- Instagram Embed Script -->
+<script async src="//www.instagram.com/embed.js"></script>
+
+</body>
+</html>
