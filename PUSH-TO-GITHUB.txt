@@ -1,0 +1,14 @@
+# Bull Gym - Quick Push Commands
+# Copy these commands after creating your GitHub repository
+
+# Replace YOUR-REPO-URL with your actual GitHub repository URL
+# Example: https://github.com/mahindra27/bull-gym-website.git
+
+# Step 1: Add your GitHub repository as the remote origin
+git remote add origin YOUR-REPO-URL
+
+# Step 2: Push to GitHub
+git push -u origin main
+
+# That's it! Your website is now on GitHub.
+# Next: Enable GitHub Pages in your repository settings.
