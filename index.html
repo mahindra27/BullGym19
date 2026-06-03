@@ -64,7 +64,11 @@
     {"@type":"Question","name":"Is there a ladies membership at Bull Gym 19?","acceptedAnswer":{"@type":"Answer","text":"Yes, we offer dedicated female membership plans at affordable rates."}},
     {"@type":"Question","name":"Does Bull Gym 19 provide personal training?","acceptedAnswer":{"@type":"Answer","text":"Yes, personal training sessions are available for all members."}},
     {"@type":"Question","name":"Is parking available at Bull Gym 19?","acceptedAnswer":{"@type":"Answer","text":"Yes, parking is available near the gym at Taman Teratai Mewah."}},
-    {"@type":"Question","name":"How much is the membership at Bull Gym 19?","acceptedAnswer":{"@type":"Answer","text":"Membership starts from RM50/month. Student and senior discounts are also available."}}
+    {"@type":"Question","name":"How much is the membership at Bull Gym 19?","acceptedAnswer":{"@type":"Answer","text":"Membership starts from RM50/month. Student and senior discounts are also available."}},
+    {"@type":"Question","name":"Is parking available at Bull Gym 19?","acceptedAnswer":{"@type":"Answer","text":"Yes, free parking is available near the gym at Taman Teratai Mewah."}},
+    {"@type":"Question","name":"Can I try Bull Gym 19 before joining?","acceptedAnswer":{"@type":"Answer","text":"Yes! Walk in for a trial day for only RM5. No registration or contract needed."}},
+    {"@type":"Question","name":"Is Bull Gym 19 good for beginners?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Bull Gym 19 is beginner-friendly. Our trainers will guide you on basic exercises and proper form."}},
+    {"@type":"Question","name":"Where is Bull Gym 19 located?","acceptedAnswer":{"@type":"Answer","text":"Bull Gym 19 is located at 23-2, Jalan 1/23f, Taman Teratai Mewah, 53000 Kuala Lumpur."}}
   ]
 }
 </script>
@@ -161,6 +165,65 @@ html {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
+/* 3D card tilt */
+.tilt-card {
+    transform-style: preserve-3d;
+    transition: transform 0.15s ease;
+    will-change: transform;
+}
+/* Button ripple */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+.btn-ripple .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transform: scale(0);
+    animation: ripple-anim 0.6s linear;
+    pointer-events: none;
+}
+@keyframes ripple-anim {
+    to { transform: scale(4); opacity: 0; }
+}
+/* Video overlay */
+.video-overlay-btn {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.45);
+    cursor: pointer;
+    transition: background 0.3s;
+    z-index: 10;
+}
+.video-overlay-btn:hover { background: rgba(0,0,0,0.3); }
+.video-play-circle {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: rgba(255,83,91,0.9);
+    display: flex; align-items: center; justify-content: center;
+    animation: pulse-play 2s infinite;
+    transition: transform 0.2s;
+}
+.video-overlay-btn:hover .video-play-circle { transform: scale(1.1); }
+@keyframes pulse-play {
+    0%,100% { box-shadow: 0 0 0 0 rgba(255,83,91,0.5); }
+    50% { box-shadow: 0 0 0 18px rgba(255,83,91,0); }
+}
+/* Crowd indicator */
+.crowd-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 16px; border-radius: 50px;
+    font-size: 13px; font-weight: 700;
+    border: 1.5px solid currentColor;
+}
+/* Sticky CTA rotating */
+#stickyCta { transition: opacity 0.4s ease, transform 0.4s ease; }
+#stickyCta.hide { opacity: 0; pointer-events: none; transform: translateX(-50%) translateY(20px); }
 nav.scrolled {
     background: rgba(10, 10, 10, 0.95) !important;
     box-shadow: 0 4px 20px rgba(230, 57, 70, 0.2);
@@ -512,13 +575,16 @@ a:active {
 <p class="text-base md:text-lg text-gray-300 mb-5 fade-in stagger-2">Strength Training &bull; Weight Loss &bull; Personal Coaching</p>
 <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-6 fade-in stagger-2 italic">NO EXCUSES. JUST IRON.</h2>
 <div class="flex flex-col md:flex-row gap-4 fade-in stagger-3">
-    <a class="btn-primary px-8 py-4 font-bold text-lg text-center rounded-xl" href="#membership">START TRAINING</a>
-<a class="btn-secondary px-8 py-4 font-bold text-lg text-center rounded-xl" href="#programs">View Programs</a>
+    <a class="btn-primary px-8 py-4 font-bold text-lg text-center rounded-xl btn-ripple" href="#membership">START TRAINING</a>
+<a class="btn-secondary px-8 py-4 font-bold text-lg text-center rounded-xl btn-ripple" href="#trial">Try for RM5</a>
 </div>
 <div class="flex flex-wrap gap-4 mt-10 fade-in stagger-4">
 <span class="bg-surface-container px-4 py-2 text-sm font-semibold rounded-xl">Fat Loss Program</span>
 <span class="bg-surface-container px-4 py-2 text-sm font-semibold rounded-xl">Strength Training</span>
 <span class="bg-surface-container px-4 py-2 text-sm font-semibold rounded-xl">Personal Coaching</span>
+</div>
+<div class="mt-6 fade-in stagger-4">
+<span id="crowdBadge" class="crowd-badge"></span>
 </div>
 </div>
 </div>
@@ -625,10 +691,17 @@ a:active {
 
 <!-- Video Section - Gym Tour -->
 <section class="py-24 text-center bg-black">
-    <h2 class="text-4xl md:text-5xl font-bold mb-8 fade-in">See The Gym In Action</h2>
+    <h2 class="text-4xl md:text-5xl font-bold mb-2 fade-in">See The Gym In Action</h2>
+    <p class="text-primary font-bold tracking-widest uppercase text-sm mb-3 fade-in stagger-1">&#9654; Watch 30 sec gym tour</p>
     <p class="text-gray-400 mb-10 fade-in stagger-1">Real people. Real workouts. Real results.</p>
     <div class="max-w-4xl mx-auto px-6">
-        <div class="bg-surface-container-high rounded-xl overflow-hidden shadow-lg scale-in stagger-2">
+        <div class="relative bg-surface-container-high rounded-xl overflow-hidden shadow-lg scale-in stagger-2">
+            <div id="videoOverlay" class="video-overlay-btn" onclick="startGymVideo()">
+                <div class="video-play-circle">
+                    <span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings:'FILL' 1">play_arrow</span>
+                </div>
+                <p class="mt-4 text-white font-bold tracking-wide text-sm">WATCH GYM TOUR</p>
+            </div>
             <video id="gymVideo" class="w-full h-auto" controls muted loop playsinline preload="none" poster="logo.jpeg" onerror="this.style.display='none'; document.getElementById('videoFallback').style.display='flex';">
                 <source src="videos/gym_video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -813,6 +886,24 @@ a:active {
 </div>
 </section>
 
+<!-- Trial Day Section -->
+<section class="py-20 bg-gradient-to-r from-primary-container/20 to-tertiary-container/20 border-y-2 border-primary/30" id="trial">
+<div class="container mx-auto px-6 text-center">
+<span class="text-primary font-black tracking-widest uppercase text-sm">LIMITED OFFER</span>
+<h2 class="text-4xl md:text-5xl font-black uppercase mt-2 mb-3 fade-in">Try Before You Commit</h2>
+<p class="text-gray-300 text-lg mb-2 fade-in stagger-1">Walk in for a <span class="text-primary font-black">Trial Day &mdash; RM5 only.</span> No registration needed.</p>
+<p class="text-gray-400 mb-8 fade-in stagger-2">Experience the gym, meet the trainers, and see if Bull Gym 19 is right for you.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center fade-in stagger-3">
+<a href="https://wa.me/60127989035?text=Hi%2C%20I%20want%20to%20book%20a%20Trial%20Day%20at%20Bull%20Gym%2019." target="_blank" rel="noopener noreferrer" class="btn-primary font-bold py-4 px-8 rounded-xl inline-flex items-center justify-center gap-2 btn-ripple">
+<span class="material-symbols-outlined">fitness_center</span> Book Trial Day &mdash; RM5
+</a>
+<a href="https://wa.me/60127989035?text=Hi%2C%20I%20want%20to%20learn%20more%20about%20Bull%20Gym%2019%20membership." target="_blank" rel="noopener noreferrer" class="btn-secondary font-bold py-4 px-8 rounded-xl inline-flex items-center justify-center gap-2 btn-ripple">
+<span class="material-symbols-outlined">chat</span> Ask on WhatsApp
+</a>
+</div>
+</div>
+</section>
+
 <!-- Reviews Section -->
 <section class="py-24 bg-surface-container-low" id="reviews">
 <div class="container mx-auto px-6">
@@ -826,17 +917,17 @@ a:active {
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-<div class="bg-surface-container-high rounded-xl p-6 fade-in stagger-1">
+<div class="bg-surface-container-high rounded-xl p-6 fade-in stagger-1 tilt-card">
 <div class="text-yellow-400 text-xl mb-3 tracking-widest">★★★★★</div>
 <p class="text-gray-300 mb-4 italic">"Friendly environment and affordable membership. Best gym in KL for beginners!"</p>
 <p class="font-bold text-primary">— Ahmad</p>
 </div>
-<div class="bg-surface-container-high rounded-xl p-6 fade-in stagger-2">
+<div class="bg-surface-container-high rounded-xl p-6 fade-in stagger-2 tilt-card">
 <div class="text-yellow-400 text-xl mb-3 tracking-widest">★★★★★</div>
 <p class="text-gray-300 mb-4 italic">"Clean gym with good equipment. The trainers are helpful and the price is very reasonable."</p>
 <p class="font-bold text-primary">— Siti</p>
 </div>
-<div class="bg-surface-container-high rounded-xl p-6 fade-in stagger-3">
+<div class="bg-surface-container-high rounded-xl p-6 fade-in stagger-3 tilt-card">
 <div class="text-yellow-400 text-xl mb-3 tracking-widest">★★★★★</div>
 <p class="text-gray-300 mb-4 italic">"Great atmosphere, no judging. Perfect for anyone who wants to start their fitness journey."</p>
 <p class="font-bold text-primary">— Raj</p>
@@ -972,11 +1063,14 @@ How much is the monthly membership?
 </div>
 </div>
 <div class="flex flex-col gap-3">
-<a href="https://wa.me/60127989035" target="_blank" rel="noopener noreferrer" class="btn-primary font-bold py-4 flex items-center justify-center gap-2 rounded-xl">
-    <span class="material-symbols-outlined">chat</span> WHATSAPP: 012-798 9035
+<a href="https://wa.me/60127989035?text=Hi%2C%20I%20want%20to%20join%20Bull%20Gym%2019.%20I%20am%20interested%20in%3A%20General%20Membership." target="_blank" rel="noopener noreferrer" class="btn-primary font-bold py-4 flex items-center justify-center gap-2 rounded-xl btn-ripple">
+    <span class="material-symbols-outlined">chat</span> Join — General Membership
 </a>
-<a href="https://wa.me/60127989735" target="_blank" rel="noopener noreferrer" class="btn-primary font-bold py-4 flex items-center justify-center gap-2 rounded-xl">
-    <span class="material-symbols-outlined">chat</span> WHATSAPP: 012-798 9735
+<a href="https://wa.me/60127989035?text=Hi%2C%20I%20want%20to%20join%20Bull%20Gym%2019.%20I%20am%20interested%20in%3A%20Student%20Discount." target="_blank" rel="noopener noreferrer" class="btn-primary font-bold py-4 flex items-center justify-center gap-2 rounded-xl btn-ripple">
+    <span class="material-symbols-outlined">school</span> Join — Student Discount
+</a>
+<a href="https://wa.me/60127989035?text=Hi%2C%20I%20want%20to%20join%20Bull%20Gym%2019.%20I%20am%20interested%20in%3A%20Female%20Membership." target="_blank" rel="noopener noreferrer" class="btn-primary font-bold py-4 flex items-center justify-center gap-2 rounded-xl btn-ripple">
+    <span class="material-symbols-outlined">female</span> Join — Female Membership
 </a>
 <a href="tel:+60127989032" class="btn-primary font-bold py-4 flex items-center justify-center gap-2 rounded-xl">
     <span class="material-symbols-outlined">call</span> CALL NOW
@@ -1031,11 +1125,19 @@ How much is the monthly membership?
 </div>
 </footer>
 
-<div class="fixed bottom-8 right-8 z-50 md:hidden">
-<a href="#membership" class="btn-primary w-16 h-16 flex items-center justify-center rounded-full shadow-lg">
-<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">add</span>
+<!-- Mobile floating WhatsApp CTA (mobile-first) -->
+<div class="fixed bottom-6 right-5 z-50 md:hidden flex flex-col items-end gap-2" id="mobileWaCta">
+<a href="https://wa.me/60127989035?text=Hi%2C%20I%20want%20to%20join%20Bull%20Gym%2019." target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-green-500 text-white font-bold text-sm py-3 px-4 rounded-full shadow-xl" style="box-shadow:0 4px 18px rgba(37,211,102,0.5)">
+<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.83L.057 23.994l6.304-1.647A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.988-1.362l-.357-.213-3.742.977 1.004-3.632-.234-.373A9.822 9.822 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+WhatsApp Us
 </a>
 </div>
+
+<!-- Desktop sticky CTA -->
+<a id="stickyCta" href="#membership" class="sticky-cta-desktop hide">
+<span class="material-symbols-outlined text-lg">fitness_center</span>
+<span id="stickyCtaText">Join from RM50 today</span>
+</a>
 
 <script>
 // Dynamic copyright year
@@ -1113,6 +1215,89 @@ if (gymVideo) {
     }, { threshold: 0.5 });
     videoObserver.observe(gymVideo);
 }
+
+// Video overlay play button
+function startGymVideo() {
+    const overlay = document.getElementById('videoOverlay');
+    const video = document.getElementById('gymVideo');
+    if (overlay) overlay.style.display = 'none';
+    if (video) { video.play(); }
+}
+
+// Dynamic sticky CTA rotation
+(function() {
+    const messages = [
+        'Join from RM50 today',
+        'Start for RM6/day',
+        'Claim Student Discount',
+        'Book a Trial for RM5',
+        'No Contract — Join Now'
+    ];
+    let idx = 0;
+    const cta = document.getElementById('stickyCta');
+    const ctaText = document.getElementById('stickyCtaText');
+    if (!cta || !ctaText) return;
+    // Show after scrolling past hero
+    const heroEl = document.querySelector('header');
+    const ctaObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { cta.classList.add('hide'); }
+            else { cta.classList.remove('hide'); }
+        });
+    }, { threshold: 0.2 });
+    if (heroEl) ctaObserver.observe(heroEl);
+    setInterval(function() {
+        cta.style.opacity = '0';
+        setTimeout(function() {
+            idx = (idx + 1) % messages.length;
+            ctaText.textContent = messages[idx];
+            cta.style.opacity = '';
+        }, 400);
+    }, 3500);
+})();
+
+// Live crowd / best time indicator
+(function() {
+    const badge = document.getElementById('crowdBadge');
+    if (!badge) return;
+    const h = new Date().getHours();
+    let level, color, dot;
+    if (h >= 6 && h < 11) { level = 'LOW CROWD — Great time to train'; color = '#22c55e'; dot = '🟢'; }
+    else if (h >= 11 && h < 16) { level = 'MODERATE — Steady flow'; color = '#eab308'; dot = '🟡'; }
+    else if (h >= 16 && h < 21) { level = 'PEAK HOURS — Busiest time'; color = '#ef4444'; dot = '🔴'; }
+    else if (h >= 21 && h <= 23) { level = 'QUIET — Almost closing'; color = '#22c55e'; dot = '🟢'; }
+    else { level = 'CLOSED — Opens 7AM'; color = '#6b7280'; dot = '⚫'; }
+    badge.style.color = color;
+    badge.style.borderColor = color;
+    badge.style.background = color + '18';
+    badge.textContent = dot + '  NOW: ' + level;
+})();
+
+// Button ripple effect
+document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.btn-ripple');
+    if (!btn) return;
+    const circle = document.createElement('span');
+    circle.classList.add('ripple');
+    const rect = btn.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    circle.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX-rect.left-size/2}px;top:${e.clientY-rect.top-size/2}px`;
+    btn.appendChild(circle);
+    circle.addEventListener('animationend', () => circle.remove());
+});
+
+// 3D card tilt
+document.querySelectorAll('.tilt-card').forEach(card => {
+    card.addEventListener('mousemove', function(e) {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 16;
+        const y = ((e.clientY - rect.top) / rect.height - 0.5) * -16;
+        card.style.transform = `perspective(600px) rotateY(${x}deg) rotateX(${y}deg) scale(1.02)`;
+    });
+    card.addEventListener('mouseleave', function() {
+        card.style.transform = '';
+    });
+});
 
 // Mobile menu toggle
 function toggleMobileMenu() {
