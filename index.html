@@ -919,6 +919,21 @@ window.addEventListener('load', () => {
     });
 });
 
+// Autoplay video on scroll into view
+const gymVideo = document.getElementById('gymVideo');
+if (gymVideo) {
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                gymVideo.play();
+            } else {
+                gymVideo.pause();
+            }
+        });
+    }, { threshold: 0.5 });
+    videoObserver.observe(gymVideo);
+}
+
 // Mobile menu toggle
 function toggleMobileMenu() {
     const menu = document.getElementById('mobileMenu');
