@@ -29,17 +29,6 @@ Professional landing page for **19 Bull Gym**, a hardcore fitness center in Kual
 - **Phone:** 012-798 9032
 - **WhatsApp:** 012-798 9035 / 012-798 9735
 
-### 💰 Membership Pricing
-| Category | Monthly | 3 Months |
-|----------|---------|----------|
-| Men | RM70 | RM200 |
-| Women | RM60 | RM170 |
-| Students | RM55 | RM160 |
-| Seniors | RM50 | RM140 |
-
-**Walk-in Rates:** Men RM7 | Women/Students RM6 | Seniors RM5  
-**Registration:** RM30 (one-time)
-
 ---
 
 ## 🚀 Tech Stack
